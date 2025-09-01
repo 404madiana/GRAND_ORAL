@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+
+<head>
+    <title>.PY | Programmes</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Diana N.">
+    <style>
+        body {
+            background-color: #2f2d30;
+            color: white;
+            font-family: "HYWenHei 85W", "Century Gothic", sans-serif;
+            margin-left: 2%;
+            margin-right: 2%
+        }
+        code {
+            font-size: large
+        }
+        h2 {
+            color: #ffc778;
+        }
+        h3 {
+            margin-right: 13px
+        }
+
+        .notice {
+            padding: 0.5rem 1rem;
+            margin-bottom: 16px;
+            border-left: 4px solid #2f81f7;
+            background-color: #232323;
+        }
+        .exemple {
+            display: flex;
+            margin: auto;
+        }
+
+        /* TOOLTIP */
+        .tooltip {
+            position: relative;
+            display: inline-block;
+        }
+        .tooltip .tooltiptxt {
+            visibility: hidden;
+            background-color: #2f81f7;
+            color: black;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px 5px;
+            
+            width: 150px;
+            bottom: 110%;
+            left: 50%;
+            margin-left: -75px;
+            /* Use half of the width (120/2 = 60), to center the tooltip */
+            
+            position: absolute;
+            z-index: 1;
+        }
+        /* TOOLTIP :hover */
+        .tooltip:hover {
+            background-color: rgba(48, 131, 248, 0.40);
+        }
+        .tooltip:hover .tooltiptxt {
+            visibility: visible;
+        }
+
+        .copy {
+            cursor: pointer
+        }
+
+        .tab {
+            margin-left: 2em
+        }
+        .tab2 {
+            margin-left: 4em
+        }
+        .code {
+            width: auto;
+            font-size: 13.5px;
+            background-color: #191919;
+            padding: 15px 15px;
+            border-radius: 3px;
+            font-family: 'Consolas', monospace;
+        }
+
+        /* code clr */
+        .module {
+            color: #faa61a;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Codes Python pour le contrôle</h1>
+        <h3 style="color: #faa61a;">NSI avec M.Sangan</h3>
+        <p class="notice">
+            <span style="color: #2f81f7; fill: #2f81f7; font-size: 19px;">
+                <svg width="16" height="16">
+                    <path
+                        d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z">
+                    </path>
+                </svg> <b>NOTICE</b>
+            </span><br><br>
+            Python est à la <b>case sensible</b> alors il est vulnérable aux fautes de syntaxe.<br>
+            Certains de ces codes ne marchent que sur EduPython :sadge: <br>
+            <br>
+            Certains des scripts importent les modules :<br>
+            - <code class="module">random</code> pour les évenements aléatoires<br>
+            - <code class="module">time</code> pour une lecture <i>moins agressive</i> sur le terminal <span style="opacity: 40%;">(supprimable)</span>
+            <br><br>
+            N'hésitez pas à passer la souris sur certains scripts pour voir les <span style="color: #2f81f7;">explications</span> :)
+        </p>
+    </header>
+    <main>
+        <h2>21/11/2023</h2>
+        <div class="exemple"><h3 id="list-random" class="copy">Liste<br>aléatoire</h3>
+            <div class="code">
+                <span class="tooltip" style=".tooltip:hover {color: #faa61a;}">import random<span class="tooltiptxt">"On importe le module <b>random</b>."</span></span><br>
+                <br>
+                <span class="tooltip">L<span class="tooltiptxt" style="width: 170px;"><u>Attribut <b>L</b></u><br>Ici L est une <b>liste</b> (crochets contenant des valeurs)</span></span> =
+                [<span class="tooltip" style=".tooltip:hover {color: #faa61a;}">random.<span class="tooltiptxt">"Depuis <b>random</b>,.."</span></span><span class="tooltip">randint(1, 100)<span class="tooltiptxt"><b>randint</b> choisit au hasard des entiers entre 1 et 100</span></span>
+                <span class="tooltip">for<span class="tooltiptxt"><u>Boucle <b>for</b></u><br>
+                "Pour [...] en [...]:~"</span></span> <span class="tooltip">i in range(10)<span class="tooltiptxt">randint choisit <b>10</b> nombres au hasard</span></span>]
+            </div>
+        </div><br>
+        <div class="exemple"><h3 id="epel" class="copy" style="margin-top: 40px;">Épélation de <br>caractères</h3>
+            <div class="code">
+                <span class="tooltip" style=".tooltip:hover {color: #faa61a;}">import time<span class="tooltiptxt">"On importe le module <b>time</b>."</span></span><br>
+                <span class="tooltip">txt<span class="tooltiptxt" style="width: 170px;"><u>Attribut <b>txt</b></u><br>Ici L est une <b>chaîne de caractères</b> (guillemets)</span></span> = 'Exemple'<br>
+                <br>
+                <span class="tooltip">for i in<span class="tooltiptxt">"Pour chaque lettre dans..."</span></span> range(<span class="tooltip">len(txt)<span class="tooltiptxt"><u>taille de <b>txt</b></u><br>
+                    <b>len</b> s'adapte à toute nouvelle attribution de <b>txt</b></span></span>):<br>
+                <span class="tab"><span class="tooltip">print<span class="tooltiptxt">affiche dans le terminal</span></span>(<span class="tooltip">txt[i]<span class="tooltiptxt">
+                    <u>"CETTE lettre depuis <b>txt</b>"</u>
+                <br>après l'affichage de la lettre, <b>i</b> bascule à la suivante</span></span>)</span><br>
+                <span class="tab"><span class="tooltip" style=".tooltip:hover {color: #faa61a;}">time.<span class="tooltiptxt">"Depuis <b>time</b>,.."</span></span><span class="tooltip">sleep(1)<span class="tooltiptxt">le terminal respire pour <b>1</b> sec.</span></span>
+            </div>
+        </div><br>
+        <div class="exemple"><h3 id="list-while" class="copy" style="margin-top: 50px;">Listing<br>avec <b>WHILE</b></h3>
+            <div class="code">
+                import time<br>
+                L = [2, 3, 1, 6, 5] <span style="opacity: 50%; font-style: italic;"># on prend ces chiffres comme <span style="color: #2f81f7;">exemples</span></span><br>
+                <br>
+                <span class="tooltip">i = 0<span class="tooltiptxt">mise en place du compteur de caractère</span></span><br>
+                <span class="tooltip">while i < len(L)<span class="tooltiptxt">"Tant que <b>i</b> est + petit que la <b>taille de L</b>,.."</span></span>:<br>
+                <span class="tab">print(L[i])</span><br>
+                <span class="tab"><span class="tooltip">i += 1<span class="tooltiptxt">bascule le compteur à la lettre suivante</span></span></span><br>
+                <span class="tab">time.sleep(1)</span>
+            </div>
+        </div><br>
+        <div class="exemple"><h3 id="list-e" class="copy" style="margin-top: 40px;">Listing en<br>élément</h3>
+            <div class="code">
+                import time<br>
+                L = [2, 3, 1, 6, 5]<br>
+                <br>
+                for <span class="tooltip">e in L<span class="tooltiptxt"><u>Attribut <b>e</b></u>
+                <br><b>e</b> aura la valeur de chaque élément dans la liste<br><b>in L</b> analyse déjà la taille de <b>L</b></span></span>:<br>
+                <span class="tab">print(e)</span><br>
+                <span class="tab">time.sleep(1)</span>
+            </div>
+        </div><br>
+        <div class="exemple"><h3 id="enumerate" class="copy" style="margin-top: 50px;">Énumération</h3>
+            <div class="code">
+                import time<br>
+                L = [2, 3, 1, 6, 5]<br>
+                <br>
+                for <span class="tooltip">i, e<span class="tooltiptxt">l'<b>i</b>ndex avec sa valeur correspondante</span></span> in <span class="tooltip">enumerate(L)<span class="tooltiptxt">lit tous les indices et valeurs un par un</span></span>:<br>
+                <span class="tab">print(i, e)</span><br>
+                <span class="tab">time.sleep(1)</span>
+            </div>
+        </div><br>
+        <div class="exemple"><h3 id="bool-inlist" class="copy" style="margin-top: 40px;"><b>BOOL</b>: valeur<br>dans la liste</h3>
+            <div class="code">
+                L = [2, 3, 1, 6, 5]<br>
+                <br>
+                <span class="tooltip">def appartient<span class="tooltiptxt"><b>fonction</b> qu'on l'appelle 'appartient()'</span>
+                </span>(<span class="tooltip">elt<span class="tooltiptxt">Attribut <b>elt</b> qu'on va définir directement sur le terminal
+                    <br>> appartient(<i style="color: #fff;">3</i>, L)<br>Ici, elt = <i style="color: #fff;">3</i></span></span>, <span class="tooltip">L<span class="tooltiptxt">"Cherche <i style="color: #fff;">3</i> dans cette <b>liste</b>."</span></span>):<br>
+                <span class="tab">for e in L:</span><br>
+                <span class="tab2"><span class="tooltip">if e<span class="tooltiptxt">"Si cet élément(<b>e</b>) dans la liste.."
+                </span></span> <span class="tooltip">== elt:<span class="tooltiptxt">"..correspond(<b>=</b>) à celui qu'on cherche(<b>elt</b>):"</span></span></span><br>
+                <span style="margin-left: 6em;"><span class="tooltip">return True<span class="tooltiptxt">"Répond <b>Vrai</b>."</span></span></span><br>
+                <span class="tab2"><span class="tooltip">return False<span class="tooltiptxt">"Sinon, répond <b>Faux</b>."</span></span></span>
+            </div>
+        </div><br>
+        <div class="exemple"><h3 id="indice" class="copy" style="margin-top: 40px;">Recherche d'indice<br> d'une valeur<br>dans la liste</h3>
+            <div class="code">
+                L = [2, 3, 1, 6, 5]<br>
+                <br>
+                def indice(elt, L):<br>
+                <span class="tab">for i in range(len(L)):</span><br>
+                <span class="tab2"><span class="tooltip">if L[i]<span class="tooltiptxt">"Si la valeur dans la liste tirée par l'indice(<b>i</b>).."
+                </span></span> == elt:</span><br>
+                <span style="margin-left: 6em;"><span class="tooltip">return i<span class="tooltiptxt">"Affiche l'<b>indice</b> de cette valeur."</span></span></span><br>
+                <span class="tab2"><span class="tooltip">return None<span class="tooltiptxt"><b>None</b> pour indiquer que cette valeur n'existe pas dans<br>la liste</span></span></span>
+            </div>
+        </div><br>
+        <div class="exemple"><h3 id="maxi" class="copy" style="margin-top: 50px;">Valeur<br>maximum<br>d'une liste</h3>
+            <div class="code">
+                L = [2, 3, 1, 6, 5]<br>
+                <br>
+                def maximum(L):<br>
+                <span class="tab">maxi = <span class="tooltip">L[0]<span class="tooltiptxt">première valeur de la liste, valeur <b>initiale</b> pour comparer à la suite</span></span><br>
+                <span class="tab">for i in range(len(L)):<br>
+                <span class="tab2">if L[i] <span class="tooltip">> maxi<span class="tooltiptxt">"..est supérieur à <b>maxi</b>:"</span></span>:</span><br>
+                <span style="margin-left: 6em;"><span class="tooltip">maxi = L[i]<span class="tooltiptxt">la valeur de l'indice compté prend la place<br>de <b>maxi</b></span></span></span><br>
+                <span class="tab"><span class="tooltip">return maxi<span class="tooltiptxt">Affiche le maximum(<b>maxi</b>) de cette liste</span></span></span>
+            </div>
+        </div><br>
+        <div class="exemple"><h3 id="mini" class="copy" style="margin-top: 55px;">Valeur<br>minimum<br>d'une liste</h3>
+            <div class="code">
+                <i style="opacity: 50%;"># pratiquement pareil..</i><br>
+                L = [2, 3, 1, 6, 5]<br>
+                <br>
+                def minimum(L):<br>
+                <span class="tab">mini = L[0]<br>
+                <span class="tab">for i in range(len(L)):<br>
+                <span class="tab2">if L[i] <span class="tooltip">< mini<span class="tooltiptxt">"..est inférieur à <b>mini</b>:"</span></span>:</span><br>
+                <span style="margin-left: 6em;">mini = L[i]</span><br>
+                <span class="tab">return mini</span>
+            </div>
+        </div>
+        <h2>23/11/2023</h2>
+        <div class="exemple"><h3 id="moyenne" class="copy" style="margin-top: 55px;">Moyenne<br>d'une liste</h3>
+            <div class="code">
+                L = [2, 3, 1, 6, 5]<br>
+                <br>
+                def moyenne(L):<br>
+                <span class="tab">V = 0<br>
+                <span class="tab"><span class="tooltip">for i in range(len(L)):<br>
+                <span class="tab">V += L[i]<span class="tooltiptxt"><b>V</b> est la somme(<b>+=</b>) des valeurs de<br>la liste</span></span></span><br>
+                <span class="tab">M = <span class="tooltip">V / len(L)<span class="tooltiptxt">L[0]+L[1]+...L[i]<br>────────────────<br>len(L)</span></span></span><br>
+                <span class="tab">return M</span>
+            </div>
+        </div>
+        <h2>30/11/2023</h2>
+        <div class="exemple"><h3 id="bool-double" class="copy" style="margin-top: 50px;"><b>BOOL</b>: doublon<br>dans la liste</h3>
+            <div class="code">
+                L = [2, 3, 1, 6, 5]<br>
+                <br>
+                def double(L):<br>
+                <span class="tab">for i in range(len(L) <span class="tooltip">- 1<span class="tooltiptxt"><b>- 1</b> puisque la valeur cherché ne doit apparaître qu'une fois</span></span>):<br>
+                <span class="tab2"><span class="tooltip">if L[i] == L[i + 1]:<span class="tooltiptxt">"Si la valeur actuelle correspond à la suivante:"</span></span><br>
+                <span class="tab2"><span class="tab">return True</span></span><br>
+                <span class="tab2">return False</span>
+            </div>
+        </div><br>
+        <div class="exemple"><h3 id="multi" class="copy" style="margin-top: 110px;">Multiplication<br>avec <b>+</b> et <b>-</b></h3>
+            <div class="code">
+                n1 = <span class="tooltip">input("n1 : ")<span class="tooltiptxt">permet d'insérer la valeur direct sur le terminal</span></span><br>
+                n2 = input("n2 : ")<br>
+                <br>
+                def multip(n1, n2):<br>
+                <span class="tab"><span class="tooltip">if n1 < 0:
+                    <br><span class="tab">return -multip(-n1, n2)</span><br>
+                    if n2 < 0:
+                    <br><span class="tab">return -multip(n1, -n2)</span>
+                    <span class="tooltiptxt">pour le cas des nombres négatifs</span></span></span><br><br>
+                    <span class="tab">multi = 0</span><br>
+                    <span class="tab">for _ in range(n2):</span><br>
+                    <span class="tab2">multi += n1</span><br>
+                    <span class="tab">return multi</span><br>
+                    <br>
+                    print(multip(n1, n2))
+            </div>
+        </div><br>
+        <div class="exemple"><h3 id="maxi-tab" class="copy" style="margin-top: 50px;">Valeur<br>maximum<br>avec <b>TAB</b></h3>
+            <div class="code">
+                <i style="opacity: 50%;"># mm moi jvois aucune différence..</i><br>
+                tab = [2, 3, 1, 6, 5]<br>
+                <br>
+                def maxitab(tab):<br>
+                <span class="tab">Tmax = tab[0]<br>
+                <span class="tab">for e in tab:<br>
+                <span class="tab2">if e > Tmax:</span><br>
+                <span style="margin-left: 6em;">Tmax = e</span><br>
+                <span class="tab">return Tmax</span>
+            </div>
+        </div><br>
+        <div class="exemple"><h3 id="occurence" class="copy" style="margin-top: 50px;">Occurence<br>dans la liste</h3>
+            <div class="code">
+                tab = [2, 3, 1, 6, 5]<br>
+                <br>
+                def occurence(elt, tab):<br>
+                <span class="tab">occ = 0<br>
+                <span class="tab">for e in tab:<br>
+                <span class="tab2">if e == elt:</span><br>
+                <span style="margin-left: 6em;">occ += 1</span><br>
+                <span class="tab">return occ</span>
+            </div>
+        </div>
+    </main>
+    <script>
+        //the helper function
+        let createCopy = function (textToCopy, triggerElementId, callback = null) {
+            //add event listner to elementtrigger
+            let trigger = document.getElementById(triggerElementId);
+            trigger.addEventListener("click", function () {
+                //create the readonly textarea with the text in it and hide it
+                let tarea = document.createElement("textarea");
+                tarea.setAttribute("id", triggerElementId + "-copyarea");
+                tarea.setAttribute("readonly", "readonly");
+                tarea.setAttribute(
+                    "style",
+                    "opacity: 0; position: absolute; z-index: -1; top: 0; left: -9999px;"
+                );
+                tarea.appendChild(document.createTextNode(textToCopy));
+                document.body.appendChild(tarea);
+
+                //select and copy the text in the readonly text area
+                tarea.select();
+                document.execCommand("copy");
+
+                //remove the element from the DOM
+                document.body.removeChild(tarea);
+
+                //fire callback function if provided
+                if (typeof callback === "function" && callback()) {
+                    callback();
+                }
+            });
+        };
+
+        // copying Python scripts
+        createCopy(
+            "import random\nL = [random.randint(1, 100) for i in range(10)]",
+            'list-random', function () {
+            alert("<Liste aléatoire> copié :)")
+        })
+        createCopy(
+            "import time\ntxt = 'Exemple'\n\nfor i in range(len(txt)):\n    print(txt(i))\n    time.sleep(1)",
+            'epel', function () {
+            alert("<Épélation de caractère> copié :)")
+        })
+        createCopy(
+            "import time\nL = [2, 3, 1, 6, 5]\n\ni = 0\nwhile i < len(L):\n    print(L(i))\n    i += 1\n    time.sleep(1)",
+            'list-while', function () {
+            alert("<Listing avec WHILE> copié :)")
+        })
+        createCopy(
+            "import time\nL = [2, 3, 1, 6, 5]\n\nfor e in L:\n    print(e)\n    time.sleep(1)",
+            'list-e', function () {
+            alert("<Listing en élément> copié :)")
+        })
+        createCopy(
+            "import time\nL = [2, 3, 1, 6, 5]\n\nfor i, e in enumerate(L):\n    print(i, e)\n    time.sleep(1)",
+            'enumerate', function () {
+            alert("<Énumération> copié :)")
+        })
+        createCopy(
+            "L = [2, 3, 1, 6, 5]\n\ndef appartient(elt, L):\n    for e in L:\n        if e == elt:\n            return True\n        return False",
+            'bool-inlist', function () {
+            alert("<BOOL: valeur dans la liste> copié :)")
+        })
+        createCopy(
+            "L = [2, 3, 1, 6, 5]\n\ndef indice(elt, L):\n    for i in range(len(L)):\n        if L[i] == elt:\n            return i\n        return None",
+            'indice', function () {
+            alert("<Recherche d'indice d'une valeur dans la liste> copié :)")
+        })
+        createCopy(
+            "L = [2, 3, 1, 6, 5]\n\ndef maximum(L):\n    maxi = L[0]\n    for i in range(len(L)):\n        if L[i] > maxi:\n            maxi = L[i]\n    return maxi",
+            'maxi', function () {
+            alert("<Valeur maximum d'une liste> copié :)")
+        })
+        createCopy(
+            "L = [2, 3, 1, 6, 5]\n\ndef minimum(L):\n    mini = L[0]\n    for i in range(len(L)):\n        if L[i] < mini:\n            mini = L[i]\n    return mini",
+            'mini', function () {
+            alert("<Valeur minimum d'une liste> copié :)")
+        })
+        createCopy(
+            "L = [2, 3, 1, 6, 5]\n\ndef moyenne(L):\n    V = 0\n    for i in range(len(L)):\n        V += 1\n    M = V / len(L)\n    return M",
+            'moyenne', function () {
+            alert("<Moyenne d'une liste> copié :)")
+        })
+        createCopy(
+            "L = [2, 3, 1, 6, 5]\n\ndef double(elt, L):\n    for i in range(len(L) - 1):\n        if L[i] == L[i + 1]:\n            return True\n        return False",
+            'bool-double', function () {
+            alert("<BOOL: doublon dans la liste> copié :)")
+        })
+        createCopy(
+            "n1 = input(\"n1 : \")\nn2 = input(\"n2 : \")\n\ndef multip(n1, n2):\n    if n1 < 0:\n        return -multip(-n1, n2)\n    if n2 < 0:\n        return -multip(n1, -n2)\n\n    multi = 0\n    for _ in range(n2):\n        multi += n1\n    return multi\n\nprint(multip(n1, n2))",
+            'multi', function () {
+            alert("<Multiplication avec + et -> copié :)")
+        })
+        createCopy(
+            "tab = [2, 3, 1, 6, 5]\n\ndef maxitab(tab):\n    Tmax = tab[0]\n    for e in tab:\n        if e > Tmax:\n            Tmax = e\n    return Tmax",
+            'maxi-tab', function () {
+            alert("<Valeur maximum avec TAB> copié :)")
+        })
+        createCopy(
+            "L = [2, 3, 1, 6, 5]\n\ndef occurence(elt, tab):\n    for e in tab:\n        if e == elt:\n            occ +=1\n    return occ",
+            'occurence', function () {
+            alert("<Occurence dans la liste> copié :)")
+        })
+    </script>
+</body>
+

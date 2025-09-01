@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>.HTML | Éléments</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Diana N.">
+    <style>
+        body {
+            background-color: #2f2d30;
+            color: white;
+            /* "HYWenHei 85W",*/
+            font-family: "Century Gothic", sans-serif;
+            margin-left: 2%;
+            margin-right: 2%;
+        }
+
+        code {
+            font-size: large
+        }
+
+        h3 {
+            margin-right: 13px
+        }
+
+        .notice {
+            padding: 0.5rem 1rem;
+            margin-bottom: 16px;
+            border-left: 4px solid #2f81f7;
+            background-color: #232323;
+        }
+
+        .exemple {
+            display: flex;
+            margin: auto;
+        }
+
+        /*div Categories*/
+        .category {
+            margin-bottom: 16px;
+            padding-bottom: 1px;
+            background-color: #232323;
+            border-radius: 9px
+        }
+
+        .ctgrTitle {
+            padding: 0.5rem 1rem;
+            background-color: #faa61a;
+            font-size: 23px;
+            font-weight: 700;
+            color: #191919;
+            border-top-left-radius: 9px;
+            border-top-right-radius: 9px;
+        }
+
+        /*Balise*/
+        #bls {
+            margin: 7px;
+            padding: 5px;
+            border: 2px solid;
+            border-radius: 10px;
+            width: 15em;
+            --border-clr: #ffffff;
+        }
+
+        .blsTitle {
+            background-color: var(--border-clr);
+            border-top-left-radius: 6px;
+            border-top-right-radius: 6px;
+            padding-left: 8px;
+            padding-top: 5px;
+            margin-left: -5px;
+            margin-top: -5px;
+            width: 101%;
+            height: 28px;
+            font-size: 20px;
+            font-weight: 700;
+            color: #191919;
+        }
+
+        .blsTXT {
+            padding-top: 3px;
+            font-size: 14px;
+        }
+
+        iframe {
+            width: 98%;
+            margin-top: 4px;
+        }
+
+        /* TOOLTIP */
+        .tooltip {
+            position: relative;
+            display: inline-block;
+        }
+
+        .tooltip .tooltiptxt {
+            visibility: hidden;
+            background-color: #2f81f7;
+            color: black;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px 5px;
+
+            width: 150px;
+            bottom: 110%;
+            left: 50%;
+            margin-left: -75px;
+            /* Use half of the width (120/2 = 60), to center the tooltip */
+
+            position: absolute;
+            z-index: 1;
+        }
+
+        /* TOOLTIP :hover */
+        .tooltip:hover {
+            background-color: rgba(48, 131, 248, 0.40);
+        }
+
+        .tooltip:hover .tooltiptxt {
+            visibility: visible;
+        }
+
+        .copy {
+            cursor: pointer
+        }
+
+        .tab {
+            margin-left: 2em
+        }
+
+        .tab2 {
+            margin-left: 4em
+        }
+
+        /*code*/
+        .code {
+            width: auto;
+            font-size: 13.5px;
+            background-color: #191919;
+            padding: 15px 15px;
+            border-radius: 3px;
+            font-family: 'Consolas', monospace;
+        }
+
+        .module {
+            color: #faa61a;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Éléments et bases en HTML</h1>
+        <h3 style="color: #faa61a;">NSI avec M.Sangan</h3>
+        <p class="notice">
+            <span style="color: #2f81f7; fill: #2f81f7; font-size: 19px;">
+                <svg width="16" height="16">
+                    <path
+                        d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z">
+                    </path>
+                </svg> <b>NOTICE</b>
+            </span><br><br>
+            Comme Python, HTML est à la <b>case sensible</b> alors il est vulnérable aux fautes de syntaxe.<br>
+            Il arrive qu'on n'affiche pas certaines espaces après une balise~
+
+            <br><br>
+            N'hésitez pas à rechercher une notion ou une balise sur la feuille :<br>
+            <span style="color: #2f81f7; font-weight: 700;">Ctrl + F <span style="font-size: 10px;">en même
+                    temps</span></span> et écrivez ce que vous cherchez :)
+        </p>
+    </header>
+    <main>
+        <h2>Définitions</h2>
+        <p>HTML est un langage de contenu web pour l'interface visuel,
+            on le qualifie souvent de <i style="color: cornsilk;">plan de page web</i> pour y ajouter des contenus
+            autres que HTML.
+            Il est possible de <b>dynamiser</b> une page HTML avec <span>JavaScript</span> mais pour l'instant,
+            HTML en lui-même c'est grand chose :,)</p>
+        <div class="category">
+            <div class="ctgrTitle">Racine principale | Root</div>
+            <div id="bls">
+                <div class="blsTitle">&lt;!DOCTYPE&gt;</div>
+                <div class="blsTXT">
+                    La balise INDISPENSABLE pour un fichier HTML.
+                    IL permet de définir ce qu'est le type de fichier, <i>donc HTML..</i>
+                    <br><br>
+                    On le note au tout début du script.<br>
+                    <div class="code">&lt;!<span style="color: #03ffcd;">DOCTYPE</span> <span
+                            style="color: rgb(234, 203, 0);">html</span>&gt;</div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script>
+        function getRandomColor() {
+            var letters = '0123456789ABCDEF';
+            var color = '#';
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+        $("#bls").css("--border-clr", getRandomColor());
+    </script>
+</body>
+
+</html>
